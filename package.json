@@ -1,0 +1,67 @@
+{
+  "name": "feedkit",
+  "description": "A simple RSS feed generator",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "packageManager": "pnpm@10.2.1",
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "release": "tsup && publint && changeset publish",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.1"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.12",
+    "@types/node": "^22.13.1",
+    "publint": "^0.3.4",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "author": {
+    "email": "doinki94@gmail.com",
+    "name": "doinki",
+    "url": "https://github.com/doinki"
+  },
+  "bugs": "https://github.com/doinki/feedkit/issues",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/doinki/feedkit#readme",
+  "keywords": [
+    "feed",
+    "rss",
+    "atom",
+    "syndication"
+  ],
+  "repository": {
+    "url": "git+https://github.com/doinki/feedkit.git",
+    "type": "git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
